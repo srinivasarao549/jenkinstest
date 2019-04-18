@@ -1,14 +1,10 @@
 pipline {
-  agent {
-    docker {
-      image 'node:8.15.1-alpine'
+    agent any 
+    stages {
+        stage('Stage 1') {
+            steps {
+                echo 'Hello world!' 
+            }
+        }
     }
-  }
-  stages {
-    stage('build') {
-      steps {
-        sh 'npm --version'
-      }
-    }
-  }
 }
